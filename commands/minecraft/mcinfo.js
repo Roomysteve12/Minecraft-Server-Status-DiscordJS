@@ -18,7 +18,7 @@ let embed = new Discord.MessageEmbed()
   .setTitle('<:grass:958700079529721896> | Minecraft Server Status')
   .addField('IP Address:', `${config.ip}`, true)
   .addField('Port:', `${config.port}`, true)
-  .addField('Software:', `${config.version}`)
+  .addField('Software:', `Bedrock`)
   .addField('Version:', `${server.version}`)
   .setFooter({ text: 'Created By Roomysteve12#1152' })
 
