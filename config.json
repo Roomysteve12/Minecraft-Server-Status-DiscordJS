@@ -1,0 +1,7 @@
+{
+  "prefix": "", // prefix
+  "token": "", // discord bot token
+  "software": "", // bedrock or java
+  "ip": "", // ip of server
+  "port": "" // port of server
+}
