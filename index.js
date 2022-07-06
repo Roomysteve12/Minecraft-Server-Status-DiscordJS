@@ -78,11 +78,11 @@ client.on('ready', async () => {
       }
 
       if(!online && online === false) {
-        client.user.setPresence({ activities: [{ name: `${motd.raw} | Status: Offline` }]  })
+        client.user.setPresence({ activities: [{ name: `Status: Offline` }]  })
       }
 
       if(online === true) {
-        client.user.setPresence({ activities: [{ name: `${motd.raw} | Status: Online | Players: ${players.online}/${players.max}` }]  })
+        client.user.setPresence({ activities: [{ name: `Status: Online | Players: ${players.online}/${players.max}` }]  })
       }
     }
   }, 5000) 
