@@ -2,7 +2,7 @@
 
 ## ABOUT US
 <p align="center">
-   <img src="https://github.com/Roomysteve12/Minecraft-Server-Status-Discord-Bot/blob/main/center.png"/>
+   <img src="https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/center.png"/>
 </p>
 
 **DiscordJS**
