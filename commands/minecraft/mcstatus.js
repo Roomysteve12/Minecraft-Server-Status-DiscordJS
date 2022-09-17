@@ -39,7 +39,8 @@ run: async (client, message, args, db, config) => {
   }
 
   if(config.software === 'java') {
-   let { motd, players, online, version } = await fetch(`https://api.mcsrvstat.us/2/${config.ip}:${config.port}`).then(response => response.json()) 
+   let { motd, players, online, version, info } = await fetch(`https://api.mcsrvstat.us/2/${config.ip}:${config.port}`).then(response => response.json())
+   if(!info) info = "null"
 
     if(online === false) {
       let embed = new Discord.MessageEmbed()
@@ -61,6 +62,7 @@ run: async (client, message, args, db, config) => {
       .setTitle(`<:grass:958700079529721896> | ${motd.raw}'s Status`)
       .addField('Status: ', ':green_circle: Online', true)
       .addField('Players/Max: ', `${players.online}/${players.max}`, true)
+      .addField('Players: ', `${info.raw}`)
       .addField('Version: ', `${version}`, true)
       .addField('Uptime (Not Accurate): ', `${uptime}%`, true)
       .setFooter({ text: 'Created By Roomysteve12#1152'})
