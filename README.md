@@ -9,4 +9,5 @@
 
 - **[LANGUAGE: NodeJS](https://en.wikipedia.org/wiki/Node.js)** 
 - **[Packages](https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/package.json)**
-- **[GET YOUR DISCORD BOT TOKEN HERE](https://discord.com/developers/applications)**
+
+- **[STEP BY STEP HOW TO GET YOUR TOKEN](https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/readthis)**
