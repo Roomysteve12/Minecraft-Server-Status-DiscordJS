@@ -5,7 +5,7 @@
    <img src="https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/center.png"/>
 </p>
 
-<p>i can't update the bot discordjs v14</p>
+<p>Upgraded To DiscordJS 14!!</p>
 
 **DiscordJS**
 
