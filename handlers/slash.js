@@ -2,7 +2,7 @@ let slash = []
 const { readdirSync } = require("fs");
 const ascii = require("ascii-table");
 let table = new ascii("Slash Commands");
-table.setHeading('Slash Command', ' Load status');
+table.setHeading('Slash Command', ' Load Status');
 module.exports = (client) => {
     readdirSync("./slash/").forEach(dir => {
         const commands = readdirSync(`./slash/${dir}/`).filter(file => file.endsWith(".js"));
@@ -11,9 +11,9 @@ module.exports = (client) => {
             if (pull.name) {
                 client.slash.set(pull.name, pull);
                 slash.push(pull);
-                table.addRow(file, 'REGISTERED');
+                table.addRow(file, '✅');
             } else {
-                table.addRow(file, `UNREGISTERED`);
+                table.addRow(file, '❌');
                 continue;
              }
           }
