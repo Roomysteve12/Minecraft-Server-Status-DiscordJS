@@ -2,13 +2,6 @@
 
 ## ABOUT US
 
-<style>
-   .img-disabled {
-    cursor: default;
-    opacity: 0.5;
-}
-   </style>
-
 <p align="center">
    <img src="https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/center.png" ng-click="$ctrl.deleteRecord(id)" ng-class="{'img-disabled': $ctrl.isDeleting}" />
 </p>
