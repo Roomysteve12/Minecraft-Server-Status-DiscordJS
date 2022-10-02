@@ -39,7 +39,7 @@ const {
   clearIntervalAsync
 } = require('set-interval-async/dynamic')
 
-client.commands = new Discord.Collection();
+client.slash = new Discord.Collection();
 
 ['command'].forEach(handler => {
 	require(`./handlers/${handler}`)(client);
@@ -139,24 +139,14 @@ client.on('ready', async () => {
   }, 5000)
 })
 
-client.on('messageCreate', async message => {
-  if (!message.guild) return;
-  if(!message.content.startsWith(config.prefix)) return;
+client.on('interactionCreate', async (inter) => {
+
+  if(!inter.isButton) return;
+  const cmd = client.slash.get(inter.commandName);
+  if(!cmd) return;
   
-	if (!message.member)
-		message.member = await message.guild.fetchMember(message);
-  
-	const args = message.content
-		.slice(config.prefix.length)
-		.trim()
-		.split(/ +/g);
-	const cmd = args.shift().toLowerCase();
+  cmd.run(client, inter, config, db);
 
-	if (cmd.length === 0) return;
-
-	let command = client.commands.get(cmd)
-
-  if (command) command.run(client, message, args, db, config);
 })
 
 client.login(config.token).catch(err => {
