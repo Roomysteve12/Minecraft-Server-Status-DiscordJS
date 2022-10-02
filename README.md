@@ -3,7 +3,7 @@
 ## ABOUT US
 
 <p align="center">
-   <img src="https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/center.png" ng-click="$ctrl.deleteRecord(id)" ng-class="{'img-disabled': $ctrl.isDeleting}" />
+   <img src="https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/center.png" />
 </p>
 
 <p>Upgraded To DiscordJS 14!!</p>
