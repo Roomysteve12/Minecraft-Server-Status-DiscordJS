@@ -2,7 +2,7 @@
 
 ## ABOUT US
 <p align="center">
-   <img alt='poge' src="https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/center.png"/>
+   <img src="https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/center.png" alt="poge">
 </p>
 
 <p>Upgraded To DiscordJS 14!!</p>
