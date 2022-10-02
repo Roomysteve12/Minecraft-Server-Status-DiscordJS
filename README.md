@@ -2,7 +2,9 @@
 
 ## ABOUT US
 
-<a href="https://replit.com/github/Roomysteve12/Minecraft-Server-Status-DiscordJS" src="https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/asset/replit.png"  />
+<a href="https://replit.com/github/Roomysteve12/Minecraft-Server-Status-DiscordJS">
+<img src="https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/asset/replit.png"  />
+  </a>
 
 <p align="center">
    <img src="https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/asset/center.png" />
