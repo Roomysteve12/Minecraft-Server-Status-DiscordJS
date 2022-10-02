@@ -2,8 +2,10 @@
 
 ## ABOUT US
 
+<img href="https://replit.com/github/Roomysteve12/Minecraft-Server-Status-DiscordJS" src="https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/asset/replit.png"  />
+
 <p align="center">
-   <img src="https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/center.png" />
+   <img src="https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/asset/center.png" />
 </p>
 
 <p>Upgraded To DiscordJS 14!!</p>
