@@ -41,7 +41,7 @@ const {
 
 client.slash = new Discord.Collection();
 
-['command'].forEach(handler => {
+['slash'].forEach(handler => {
 	require(`./handlers/${handler}`)(client);
 });
 
