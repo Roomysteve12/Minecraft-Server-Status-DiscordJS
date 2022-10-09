@@ -2,8 +2,8 @@
 const colors = require('colors')
 const config = require('./config.json')
 const software = ['java', 'bedrock']
-if(!config.prefix || !config.token || !config.software || !config.ip || !software.includes(config.software)) {
-  return console.log(`Go To config.json file! \nPrefix: ${config.prefix || '!'}\nToken: ${config.token || 'private'}\nSoftware: ${config.software || 'bedrock'}\nIp And Port: ${config.ip || 'play.example.net'}:${config.port || '19132'}`.red)
+if(!config.token || !config.software || !config.ip || !software.includes(config.software)) {
+  return console.log(`Go To config.json file! \nToken: ${config.token || 'private'}\nSoftware: ${config.software || 'bedrock'}\nIp And Port: ${config.ip || 'play.example.net'}:${config.port || '19132'}`.red)
 } else {
  console.log('Successfully!'.green)
 }
