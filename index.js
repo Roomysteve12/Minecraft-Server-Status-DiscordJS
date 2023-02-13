@@ -144,7 +144,15 @@ client.on('interactionCreate', async (inter) => {
   if(!inter.isButton) return;
   const cmd = client.slash.get(inter.commandName);
   if(!cmd) return;
-  
+	
+  const role = config.role
+  if(role) {
+  const only = inter.member.roles.cache.has(config.role)
+  if(!only) return inter.reply(`<@&${config.role}>`)
+  } else {
+  return true;
+  }
+	
   cmd.run(client, inter, config, db);
 
 })
