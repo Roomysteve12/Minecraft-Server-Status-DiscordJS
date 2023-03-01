@@ -147,14 +147,11 @@ client.on('interactionCreate', async (inter) => {
 	
   const role = config.role
   if(role) {
-  const only = inter.member.roles.cache.has(config.role)
-  if(!only) return inter.reply(`<@&${config.role}>`)
+  const only = inter.member.roles.cache.has(role)
+  if(!only) return inter.reply(`Only <@&${config.role}> Can Used This Command!`)
   } else {
-  return true;
-  }
-	
   cmd.run(client, inter, config, db);
-
+  }
 })
 
 client.login(config.token).catch(err => {
