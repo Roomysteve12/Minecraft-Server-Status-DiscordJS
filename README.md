@@ -10,7 +10,7 @@
 
 **DiscordJS**
 
-- **[LANGUAGE: NodeJS](https://en.wikipedia.org/wiki/Node.js)** 
+- **[Programing: NodeJS](https://en.wikipedia.org/wiki/Node.js)** 
 - **[Packages](https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/package.json)**
 
 - **[STEP BY STEP HOW TO GET YOUR TOKEN](https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/readthis)**
