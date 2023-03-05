@@ -1,7 +1,9 @@
 {
-  "token": "Step By Step Tutorial (https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/readthis)",
-  "software": "bedrock or java",
-  "ip": "IP",
-  "port": "PORT",
-  "role": "ROLE ID"
+ "emoji": ":pick:",
+ "roleID": "1081826943579734017",
+ "token": "MTA4MDgxMDcwMTgzNDE3ODYyMg.G3C1Gq.pqU05BSpn5jKAj_erySca4vNqFXQmwr7Zwohf0",
+ "software": "java",
+ "ip": "65.21.74.149",
+ "port": "25679",
+ "interval": 10000
 }
