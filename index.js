@@ -28,8 +28,18 @@ app.get('/', (req, res) => {
 })
 
 // Main JS
+const { Client, GatewayIntentBits, Partials, Collection, MessageAttachment } = require('discord.js')
 const Discord = require('discord.js')
-const client = new Discord.Client({ intents: 32767 })
+const client = new Client({
+  intents: [
+    GatewayIntentBits.DirectMessages,
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildBans,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+  ],
+  partials: [Partials.Channel],
+});
 const fs = require('fs')
 const SimplDB = require('simpl.db')
 const db = new SimplDB()
@@ -47,6 +57,7 @@ client.slash = new Discord.Collection();
 
 client.on('ready', async () => {
 
+  // changing status
   setIntervalAsync(
   async () => {
 
@@ -55,8 +66,7 @@ client.on('ready', async () => {
 
       let { debug, motd, players, online } = await fetch(`https://api.mcsrvstat.us/bedrock/2/${config.ip}:${config.port}`).then(response => response.json())
       if(debug.query === false) {
-      console.log('Server Not Found!'.red)
-      process.exit()
+      client.user.setPresence({ activities: [{ name: `Status: Offline` }]  })
       }
 
       if(!online && online === false) {
@@ -73,8 +83,7 @@ client.on('ready', async () => {
 
       let { debug, motd, players, online } = await fetch(`https://api.mcsrvstat.us/2/${config.ip}:${config.port}`).then(response => response.json())
       if(debug.ping === false) {
-      console.log('Server Not Found!')
-      process.exit()
+      client.user.setPresence({ activities: [{ name: `Status: Offline` }]  })
       }
 
       if(!online && online === false) {
@@ -85,7 +94,10 @@ client.on('ready', async () => {
         client.user.setPresence({ activities: [{ name: `Status: Online | Players: ${players.online}/${players.max}` }]  })
       }
     }
-  }, 5000) 
+
+  }, config.interval) 
+
+  // uptime
 
   setIntervalAsync(
   async () => {
@@ -95,22 +107,21 @@ client.on('ready', async () => {
 
       let { debug, motd, players, online } = await fetch(`https://api.mcsrvstat.us/bedrock/2/${config.ip}:${config.port}`).then(response => response.json());
       if(debug.query === false) {
-      console.log('Server Not Found!'.red)
-      process.exit()
+      client.user.setPresence({ activities: [{ name: `Status: Offline` }]  })
       }
       
       let uptime = db.get('up')
 
       if(!online && online === false) {
-        if(uptime === 100) return;
+        if(uptime === 0) return;
         if(!uptime) db.set('up', 100)
-        if(uptime) db.add('up', 1)
+        if(uptime) db.subtract('up', 1)
       }
 
       if(online === true) {
-        if(uptime === 100) return;
+        if(uptime > 100) return;
         if(!uptime) db.set('up', 100)
-        if(uptime) db.subtract('up', 1)
+        if(uptime) db.add('up', 1)
       }
     } 
     
@@ -119,24 +130,23 @@ client.on('ready', async () => {
 
       let { debug, motd, players, online } = await fetch(`https://api.mcsrvstat.us/2/${config.ip}:${config.port}`).then(response => response.json());
       if(debug.ping === false) {
-      console.log('Server Not Found!'.red)
-      process.exit()
+      client.user.setPresence({ activities: [{ name: `Status: Offline` }]  })
       }
       let uptime = db.get('up')
 
       if(!online && online === false) {
-        if(uptime === 100) return;
-        if(!uptime) db.set('up', 100)
-        if(uptime) db.add('up', 1)
-      }
-
-      if(online === true) {
-        if(uptime === 100) return;
+        if(uptime === 0) return;
         if(!uptime) db.set('up', 100)
         if(uptime) db.subtract('up', 1)
       }
+
+      if(online === true) {
+        if(uptime > 100) return;
+        if(!uptime) db.set('up', 100)
+        if(uptime) db.add('up', 1)
+      }
     }
-  }, 5000)
+  }, 60000)
 })
 
 client.on('interactionCreate', async (inter) => {
@@ -148,10 +158,10 @@ client.on('interactionCreate', async (inter) => {
   const role = config.role
   if(role) {
   const only = inter.member.roles.cache.has(role)
-  if(!only) return inter.reply(`Only <@&${config.role}> Can Used This Command!`)
-  } else {
-  cmd.run(client, inter, config, db);
+  if(!only) return inter.reply({ content: `Only <@&${config.role}> Can Used This Command!`, ephemeral: true })
   }
+  
+  cmd.run(client, inter, config, db);
 })
 
 client.login(config.token).catch(err => {
