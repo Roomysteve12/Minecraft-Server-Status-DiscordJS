@@ -28,14 +28,13 @@ app.get('/', (req, res) => {
 })
 
 // Main JS
-const { Client, GatewayIntentBits, Partials, Collection, MessageAttachment } = require('discord.js')
+const { Client, GatewayIntentBits, Partials, Collection } = require('discord.js')
 const Discord = require('discord.js')
 const client = new Client({
   intents: [
-    GatewayIntentBits.DirectMessages,
     GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildBans,
     GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildMembers,
     GatewayIntentBits.MessageContent,
   ],
   partials: [Partials.Channel],
