@@ -3,7 +3,7 @@
 ## ABOUT US
 
 <p align="center">
-   <img src="https://github.com/Roomysteve12/Minecraft-Server-Status-DiscordJS/blob/main/asset/center.png" />
+   <img src="https://media.discordapp.net/attachments/1050280718779035670/1082086061766881441/image.png" />
 </p>
 
 <p>Upgraded To DiscordJS 14!!</p>
