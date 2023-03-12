@@ -2,6 +2,7 @@
 
 ## ABOUT US
 
+**Minecraft Server Status Discord Bot**
 
 <h1>Example:</h1>
 
