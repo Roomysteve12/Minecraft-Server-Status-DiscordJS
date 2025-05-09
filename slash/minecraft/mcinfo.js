@@ -17,7 +17,7 @@ run: async (client, inter, config, db) => {
       .addFields({ name: 'Ip:', value: `${config.ip}`, inline: true })
       .addFields({ name: 'Port:', value: `${config.port}`, inline: true })
       .addFields({ name: 'Uptime:', value: `${uptime}%`, inline: true })
-      .setFooter({ text: 'Created By Roomy12#9873'})
+      .setFooter({ text: 'Created By _roomysteve12'})
 
       inter.reply({ embeds: [embed], ephemeral: true })
   }
@@ -32,7 +32,7 @@ run: async (client, inter, config, db) => {
       .addFields({ name: 'Ip:', value: `${config.ip}`, inline: true })
       .addFields({ name: 'Port:', value: `${config.port}`, inline: true })
       .addFields({ name: 'Uptime:', value: `${uptime}%`, inline: false })
-      .setFooter({ text: 'Created By Roomy12#9873'})
+      .setFooter({ text: 'Created By _roomysteve12'})
 
       inter.reply({ embeds: [embed], ephemeral: true })
   }
