@@ -1,6 +1,6 @@
 {
   "name": "Minecraft Server Status DiscordJS",
-  "version": "1.0.0",
+  "version": "2.3",
   "description": "",
   "main": "index.js",
   "scripts": {
