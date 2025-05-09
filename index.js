@@ -74,6 +74,8 @@ client.on('ready', async () => {
 
       if(online === true) {
         client.user.setPresence({ activities: [{ name: `${motd.raw} | Status: Online | Players: ${players.online}/${players.max}` }]  })
+
+	if(name.length === "24") client.user.setPresence({ activities: [{ name: `Bedrock Server | Status: Online | Players: ${players.online}/${players.max}` }]  })      
       }
     }
 
@@ -90,6 +92,9 @@ client.on('ready', async () => {
       }
 
       if(online === true) {
+
+	if(name.length === "24") client.user.setPresence({ activities: [{ name: `Java Server | Status: Online | Players: ${players.online}/${players.max}` }]  })      
+	      
         client.user.setPresence({ activities: [{ name: `Status: Online | Players: ${players.online}/${players.max}` }]  })
       }
     }
