@@ -11,6 +11,9 @@ run: async (client, inter, config, db) => {
   if(config.software === 'bedrock') {
    let { motd, players, online, version } = await fetch(`https://api.mcsrvstat.us/bedrock/2/${config.ip}:${config.port}`).then(response => response.json())
 
+   let player = players
+   if(!player) player = "null"
+
     if(online === false) {
       let embed = new Discord.EmbedBuilder()
 
@@ -18,7 +21,7 @@ run: async (client, inter, config, db) => {
       .setColor(0xFF0033)
       .setTitle(`${config.emoji || ":skull:"} | Minecraft Server Status`)
       .addFields({ name: 'Status: ', value: ':red_circle: Offline' })
-      .setFooter({ text: 'Created By Roomy12#9873'})
+      .setFooter({ text: 'Created By _roomysteve12'})
 
       inter.reply({ embeds: [embed], ephemeral: true })
     }
@@ -33,7 +36,7 @@ run: async (client, inter, config, db) => {
       .addFields({ name: 'Players/Max: ', value: `${player.online}/${player.max}`, inline: true })
       .addFields({ name: 'Version: ', value: `${version}`, inline: true})
       .addFields({ name: 'Uptime (Not Accurate): ', value: `${uptime}%`, inline: true})
-      .setFooter({ text: 'Created By Roomy12#9873'})
+      .setFooter({ text: 'Created By _roomysteve12'})
 
       inter.reply({ embeds: [embed] })
     }
@@ -54,7 +57,7 @@ run: async (client, inter, config, db) => {
       .setColor(0xFF0033)
       .setTitle(`${config.emoji || ":skull:"} | Minecraft Server Status`)
       .addFields({ name: 'Status: ', value: ':red_circle: Offline'})
-      .setFooter({ text: 'Created By Roomy12#9873'})
+      .setFooter({ text: 'Created By _roomysteve12'})
 
       inter.reply({ embeds: [embed], ephemeral: true })
     }
@@ -70,7 +73,7 @@ run: async (client, inter, config, db) => {
       .addFields({ name: 'Players: ', value: `${player.list}`})
       .addFields({ name: 'Version: ', value: `${version}`, inline: true})
       .addFields({ name: 'Uptime (Not Accurate): ', value: `${uptime}%`, inline: true})
-      .setFooter({ text: 'Created By Roomy12#9873'})
+      .setFooter({ text: 'Created By _roomysteve12'})
 
       inter.reply({ embeds: [embed] })
     }
