@@ -7,7 +7,7 @@
 <h1>Example:</h1>
 
 <p align="center">
-   <img src="https://media.discordapp.net/attachments/1050280718779035670/1082086061766881441/image.png" />
+   <img src="[https://media.discordapp.net/attachments/1050280718779035670/1082086061766881441/image.png" />
 </p>
 
 <p>Upgraded To DiscordJS 14!!</p>
