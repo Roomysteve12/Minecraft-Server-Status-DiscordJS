@@ -9,7 +9,7 @@ run: async (client, inter, config, db) => {
   let uptime = db.get('up')
 
   if(config.software === 'bedrock') {
-   let { motd, players, online, version } = await fetch(`https://api.mcsrvstat.us/bedrock/2/${config.ip}:${config.port}`).then(response => response.json())
+   let { motd, players, online, version } = await fetch(`https://api.mcsrvstat.us/bedrock/3/${config.ip}:${config.port}`).then(response => response.json())
 
    let player = players
    if(!player) player = "null"
@@ -43,7 +43,7 @@ run: async (client, inter, config, db) => {
   }
 
   if(config.software === 'java') {
-   let { motd, players, online, version, info } = await fetch(`https://api.mcsrvstat.us/2/${config.ip}:${config.port}`).then(response => response.json()) 
+   let { motd, players, online, version, info } = await fetch(`https://api.mcsrvstat.us/3/${config.ip}:${config.port}`).then(response => response.json()) 
     
    let player = players
    if(!player) player = "null"
